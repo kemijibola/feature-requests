@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" >
+    <title>
+        Login - Feature Request App
+    </title>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="wrap-login">
+                <span class="login-tile">
+                    Login
+                </span>
+                <div>
+					<input class="wrap-input" type="text" name="email">
+                        <span class="input" data-placeholder="Email"></span>
+                        <span class="focus-input" data-placeholder="Email"></span>
+					</div>
+
+					<div class="wrap-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input" type="password" name="pass">
+						<span class="focus-input" data-placeholder="Password"></span>
+					</div>
+
+					<div class="container-login-form-btn">
+						<div class="wrap-login-form-btn">
+							<div class="login-form-bgbtn"></div>
+							<button class="login-form-btn">
+								Login
+							</button>
+						</div>
+					</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" >
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <script src="{{url_for('static', filename='js/jquery.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery.validate.js')}}"></script>
+    <title>
+        {% block title %} {% endblock %} - Feature Request App
+    </title>
+    {% endblock %}
+</head>
+<body>
+    <div class="top-section">
+        <div class="app-title">
+            <h2 class="title">Feature-Request App</h2>
+        </div>
+        <div class="app-nav">
+            <ul class="nav-links">
+                <li><a href="{{ url_for('client.index') }}">Clients</a></li>
+                <li><a href="{{ url_for('client.index') }}">Products</a></li>
+                <li><a href="{{ url_for('client.index') }}">Features</a></li>
+                <li><a href="{{ url_for('client.index') }}">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div>
+        {% include "footer.html" %}
+    </div>    
+</body>
+</html>

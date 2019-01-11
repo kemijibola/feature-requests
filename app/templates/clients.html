@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block title %} Clients {% endblock %}
+
+{% block content %}
+<main class="main">
+    <div class="sect-toplinks">
+        <!-- <div class="btn" id="new_client"><i class="plus icon"></i>New Client</div> -->
+        <div class="btn btn-default" id="client_toggle">
+            New Client
+        </div>
+        <!-- <a data-toggle="modal" data-target="#editModal"><span class="glyphicon glyphicon-pencil"></span></a> -->
+    </div>
+    <div class="collapse frm-margin" id="new_client">
+        <form role="form" name="frm_client" id="frm_client" method="POST">
+            <input type=hidden name="_csrf_token" value="{{csrf_token()}}">
+            <div class=row>
+                <div class="form-group">
+                    <label for="full_name">Full name:</label>
+                    <input type="text" class="form-control" id="fullname" name="fullname">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone number:</label>
+                    <input type="text" class="form-control" id="phone_number" name="phone_number">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="email">Email address:</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="address">Office Address:</label>
+                    <input type="text" class="form-control" id="address1" name="address1">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="btn_newClient">Create</button>
+        </form>
+    </div>
+    <div class="sect-tbl">
+        <table class="table" >
+          <thead>
+            <tr>
+              <th></th>
+              <th>Full name</th>
+              <th>Phone number</th>
+              <th>Email</th>
+              <th>Address</th>
+            </tr>
+          </thead> 
+          <tbody class="tbody-persons">
+              <!-- <span *ngIf="isNull"><i>There are currently no records to show</i></span> -->
+              <tr>
+                <td> <div class="fac-index"> 1 </div> </td>
+                <td> Kemi Awosile </td>
+                <td> 08080737373 </td>
+                <td> kemijibbola@gmail.com </td>
+                <td>Ibadan, Nigeria</td>
+              </tr> 
+              <tr>
+                <td> <div class="fac-index"> 1 </div> </td>
+                <td> Kemi Awosile </td>
+                <td> 08080737373 </td>
+                <td> kemijibbola@gmail.com </td>
+                <td>Ibadan, Nigeria</td>
+              </tr>  
+              <tr>
+                <td> <div class="fac-index"> 1 </div> </td>
+                <td> Kemi Awosile </td>
+                <td> 08080737373 </td>
+                <td> kemijibbola@gmail.com </td>
+                <td>Ibadan, Nigeria</td>
+              </tr>  
+            </tbody>
+        </table>
+      </div>
+</main>
+<script src="{{url_for('static', filename='js/Generic.js')}}"></script>
+<script src="{{url_for('static', filename='js/client.js')}}"></script>
+<script>  
+    $(document).ready(function () {
+        new client();
+    })
+</script>
+{% endblock %}
+
